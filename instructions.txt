@@ -1,0 +1,8 @@
+All Instructions
+
+LD:
+    LD X, Y <=> X = y
+    * X 
+        - reg8, reg16, reg16 but mem, and imm16 idek whats that
+    * Y
+        - 

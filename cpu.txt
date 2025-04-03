@@ -1,0 +1,37 @@
+CPU workflow:
+
+    * 8 registers
+        A, F
+        B, C
+        D, E
+        H, L
+        - each 8bit, being 16bit when combined
+    * PC register
+    * SP register
+
+    * Register AF also known as Accumulator & Flags
+        - A register is AC 
+        - F is for flags, where the following bit is for the following flags
+            * bit 7: Zero Flags
+            * bit 6: Subtraction flag (BCD)
+            * bit 5: Half Carry flag (BCD)
+            * bit 4: Carry flag 
+
+            * 7 6 5 4 3 2 1 0
+            * Z N H C 0 0 0 0
+
+Class CPU:
+    * singleton class
+    * storages the registers
+    * handles PC and SP
+    * Methods:
+        - write/read registers
+        - change PC/SP
+        - execute instruction
+
+Instructions:
+    * contains logic for all instruction
+    * probably the most redudant
+    * still don't have that much information about the system so its empty for now
+        
+        

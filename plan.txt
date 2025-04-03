@@ -1,0 +1,21 @@
+Components:
+    * CPU
+    * Bus
+    * VideoProccesing
+    * RAM
+        - WRAM
+        - HRAM
+        - Video RAM
+    * Cartridge
+        - separate memory
+    * Audio *optional for now
+
+
+Class Emulator
+    * Singleton class
+    * contains every other component
+
+    * Methods:
+        - get singleton 
+        - run
+        ...

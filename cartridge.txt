@@ -1,0 +1,7 @@
+Cartridge workflow:
+
+    * i think it's just gonna store memory
+
+
+Class Cartridge:
+    * lots of data

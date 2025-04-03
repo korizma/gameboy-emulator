@@ -1,0 +1,10 @@
+Bus workflow:
+
+    * 16bit width
+    * reads from Cartridge, Memory, and maybe something else idk
+
+Class Bus:
+    * static class with only methods
+    * Methods:
+        - write/read from memory
+        - write/read from cartridge 
