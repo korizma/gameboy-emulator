@@ -34,4 +34,15 @@ Instructions:
     * probably the most redudant
     * still don't have that much information about the system so its empty for now
         
-        
+
+
+
+Functions to implement:
+    bool flag(_flag_)
+        - returns state of flag
+    
+    void setFlag(_flag_, _val_)
+        - sets the flag to value
+    
+    void incSP()
+        - increases the stack pointer
