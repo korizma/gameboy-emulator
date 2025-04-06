@@ -46,3 +46,12 @@ Functions to implement:
     
     void incSP()
         - increases the stack pointer
+
+    void resetIME()
+        - resets IME flag
+    
+    void setIME()
+        - sets the IME flag
+
+    u8 swapLowHighBits(u8 number)
+        - returns the swaped number

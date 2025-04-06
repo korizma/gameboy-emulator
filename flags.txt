@@ -1,0 +1,7 @@
+number XX XX XX XX
+       Z  N  H  C
+
+00 - set to 0
+01 - set to 1
+10 - do as op
+11 - do nothing
