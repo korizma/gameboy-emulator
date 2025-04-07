@@ -30,7 +30,10 @@ typedef enum
     F, A, AF, B, C, BC, H, L, HL, D, E, DE, PC, SP, NAR // NAR - not a register
 } reg_type;
 
-
+typedef enum
+{
+    ZF, NF, HF, CF
+} flag_type;
 
 static u8 reg_loc[] = {
     0x01, // F:      0000 0001

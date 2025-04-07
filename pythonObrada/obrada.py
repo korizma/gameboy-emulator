@@ -73,7 +73,12 @@ def create_execute_functions_and_write(instructions):
 
     with open(filename, "w") as file:
 
-        for key, val in instructions.items():
+        for key, val in instructions["unprefixed"].items():
+            exe_function = cf.create_function_execute(val["hex"], val)
+            file.write(exe_function + "\n\n")
+
+
+        for key, val in instructions["cbprefixed"].items():
             exe_function = cf.create_function_execute(val["hex"], val)
             file.write(exe_function + "\n\n")
 
@@ -87,7 +92,7 @@ def main():
         "cbprefixed": process_category(opcodes, "cbprefixed"),
     }
 
-    create_execute_functions_and_write(instructions["unprefixed"])
+    create_execute_functions_and_write(instructions)
     print("Done")
 
 if __name__ == "__main__":
