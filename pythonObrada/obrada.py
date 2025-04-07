@@ -1,4 +1,5 @@
 import json
+import createFuncs as cf
 
 def load_opcodes(input_file):
     with open(input_file, "r") as f:
@@ -15,6 +16,7 @@ def process_category(opcodes, category):
             continue
         
         instructions[i] = {
+            "hex": instrc,
             "mnemonic": curr_json.get("mnemonic"),
             "bytes": curr_json.get("bytes"),
             "operands": [
@@ -66,6 +68,16 @@ def get_mnemonic_flags(instructions):
 
     return flags_by_mnemonic
 
+def create_execute_functions_and_write(instructions):
+    filename = "functions.txt"
+
+    with open(filename, "w") as file:
+
+        for key, val in instructions.items():
+            exe_function = cf.create_function_execute(val["hex"], val)
+            file.write(exe_function + "\n\n")
+
+
 def main():
     input_file = "gameboyOPCodes.json"
     opcodes = load_opcodes(input_file)
@@ -75,15 +87,8 @@ def main():
         "cbprefixed": process_category(opcodes, "cbprefixed"),
     }
 
-    operands_by_mnemonic = get_mnemonic_operands(instructions)
-    flags_by_mnemonic = get_mnemonic_flags(instructions)
-
-    for mnemonic, flags in flags_by_mnemonic.items():
-        flags_str = ', '.join(f"{flag}: {', '.join(changes)}"
-         for flag, changes in flags.items())
-        print(f"Mnemonic: {mnemonic},\n\tFlags: {flags_str}")
-
-    # print(instructions)
+    create_execute_functions_and_write(instructions["unprefixed"])
+    print("Done")
 
 if __name__ == "__main__":
     main()
